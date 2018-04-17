@@ -1,0 +1,50 @@
+<div class="hm-container">
+  <div class="welcomeHome">
+    <div class="profile">
+      <%= current_user.fname %>
+      <%= current_user.lname %>
+      <%= current_user.password %>
+      <%= current_user.age %>
+    </div>
+
+    <div class="edit">
+      <h1><%= current_user.fname %>'s Settings</h1>
+        <form class="" action="/account" method="post">
+
+            <p>First Name: <%= current_user.fname %></p>
+            <input name="fnameEd" placeholder="First Name" value=""></input>
+
+            <p>Last Name: <%= current_user.lname %></p>
+            <input name="lnameEd" placeholder="Last Name" value=""></input>
+
+            <p>Password: <%= current_user.password %></p>
+            <input name="passEd" placeholder="Password" value=""></input>
+
+            <p>Age: <%= current_user.age %></p>
+            <input name="ageEd" placeholder="Age" value=""></input>
+
+            <input type="submit" name="submit"  value="Save Edit">
+
+        </form>
+   </div>
+
+      <div class="delete">
+          <h2>Hi <%= current_user.fname %>!</h2>
+          <form class="" action="/user/destroy/<%= current_user.id %>" method="get">
+            <input type="submit" name="" value="Delete Account?"><br>
+          </form>
+      </div>
+      <div class="sign-out">
+          <input type="submit" name="" value="Sign Out?" onclick='signOut()'>
+      </div>
+   </div>
+</div>
+  <script>
+    function signOut(){
+    window.location = '/sign-out'
+    }
+
+    function useDel(){
+    window.location = '/user/destroy/:id'
+    }
+  </script>

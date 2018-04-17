@@ -1,0 +1,9 @@
+<div class="hm-container">
+  <div class="welcomeHome">
+    <h1>LIST OF POSTS</h1>
+      <% @posts.reverse_each do |post|  %>
+        <h4>Title: <%= post.title %></h4>
+        <p>Post: <%= post.content %></p>
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+      <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>Micro-Blog</title>
+    </head>
+    <body>
+        <%= flash[:notice] if flash[:notice] %>
+        <header>
+          <nav>
+            <ul>
+                <li><a href="/" style= "color: white;" >Home</a></li>
+                <%if current_user%>
+                <li><a href="/about" style= "color: white;" >About</a></li>
+                <li><a href="/users" style= "color: white;" >Users</a></li>
+                <li><a href="/user" style= "color: white;" >Blog</a></li>
+                <li><a href="/account" style= "color: white;">All Blog Posts</a></li>
+                <%end%>
+            </ul>
+          </nav>
+        </header>
+        <%=yield %>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+<div class="hm-container">
+      <div class="welcomeHome">
+
+      <h1>LIST OF USERS</h1>
+      <% @users.reverse_each do |user| %>
+          <h4><a href="/user/<%= user.id %>"><%= user.fname %> <%= user.lname %></a></h4>
+          <p>Age: <%= user.age %></p>
+      <% end %>
+    </div>
+</div>

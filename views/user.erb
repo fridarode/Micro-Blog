@@ -1,0 +1,17 @@
+<div class="hm-container">
+  <div class="welcomeHome">
+      <h2>Welcome to <%= @user.fname%>'s Page!</h2>
+        <span>Welcome to the Blog</span>
+          <form class="" action="/users" method="post">
+            <input type="text" name="title" ><br>
+            <textarea name="blog" rows="8" cols="80"></textarea>
+            <input type='submit' name="" value="submit">
+          </form>
+        <h2>Click on post to edit</h2>
+        <% @posts.reverse_each do |post| %>
+          <a href='/post-edit/<%=post.id%>'><h3><%= post.title %></h3>
+          <p><%= post.content %></p></a>
+          <span>----------------------------------------------</span>
+        <% end %>
+ </div>
+</div>
